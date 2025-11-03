@@ -1,0 +1,56 @@
+# Pre-Deployment Checklist for The Word Alchemists
+
+This is a quick checklist to run through before deploying to production.
+For a detailed guide, see PRE-DEPLOY-CHECKLIST.md.
+
+---
+
+## Code and Build
+
+-   [ ] All local changes have been committed and pushed to the main branch.
+-   [ ] The project builds successfully locally (`pnpm build`).
+-   [ ] Type checking passes without errors (`pnpm type-check`).
+-   [ ] Linter passes without errors (`pnpm lint`).
+-   [ ] No `console.log` statements remain in the code.
+-   [ ] All feature branches have been merged into `develop`.
+
+---
+
+## Environment and Configuration
+
+-   [ ] All required environment variables are set in the Vercel dashboard.
+-   [ ] The `NEXT_PUBLIC_SITE_URL` variable is updated to the production domain.
+-   [ ] Sanity CORS origins have been updated to include the production domain.
+-   [ ] The `CHANGELOG.md` file is updated with the new version details.
+
+---
+
+## Content and Assets
+
+-   [ ] All necessary content in Sanity is published (not in draft).
+-- [ ] All images, diagrams, and PDFs are uploaded and referenced correctly.
+-   [ ] Alt text is provided for all images.
+-   [ ] The `sitemap.xml` reflects the current site structure.
+
+---
+
+## Final Review
+
+-   [ ] A final self-review of the code has been completed.
+-   [ ] Key pages have been tested on different screen sizes (mobile, desktop).
+-   [ ] A backup of the Sanity dataset has been created (`pnpm --filter sanity-studio exec sanity dataset export`).
+-   [ ] The team (if any) has been notified of the upcoming deployment.
+
+---
+
+## Post-Deployment
+
+-   [ ] Verify the production URL is live and accessible.
+-   [ ] Perform a quick smoke test on all major pages and features.
+-   [ ] Check the browser console for any new errors.
+-   [ ] Monitor Vercel deployment logs for any runtime issues.
+-   [ ] Invalidate the CDN cache if necessary.
+
+---
+
+Deployment is a critical step. Take your time and be thorough.

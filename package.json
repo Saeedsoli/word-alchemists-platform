@@ -2,20 +2,57 @@
   "name": "word-alchemists-platform",
   "version": "1.0.0",
   "private": true,
-  "description": "The Word Alchemists - Digital Ecosystem",
-  "scripts": {
-    "dev": "pnpm --filter web dev",
-    "dev:studio": "pnpm --filter sanity-studio dev",
-    "build": "pnpm --filter web build",
-    "lint": "pnpm -r lint",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
-  },
+  "description": "The digital ecosystem for the book project titled 'The Word Alchemists'.",
+  "author": "Your Name <youremail@example.com>",
+  "license": "MIT",
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=8.0.0"
   },
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "dev:studio": "pnpm --filter sanity-studio dev",
+    "build": "pnpm --filter web build",
+    "build:all": "pnpm -r build",
+    "start": "pnpm --filter web start",
+    "lint": "pnpm -r lint",
+    "lint:fix": "pnpm -r lint -- --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "type-check": "pnpm -r type-check",
+    "clean": "pnpm -r clean && rm -rf node_modules",
+    "clean:modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "clean:next": "find . -name '.next' -type d -prune -exec rm -rf '{}' +",
+    "fresh": "pnpm clean:modules && pnpm clean:next && rm -f pnpm-lock.yaml && pnpm install",
+    "sanity:deploy": "pnpm --filter sanity-studio deploy",
+    "prepare": "husky install || true"
+  },
   "devDependencies": {
-    "prettier": "^3.1.1",
-    "typescript": "^5.3.3"
+    "prettier": "^3.2.5",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  },
+  "keywords": [
+    "next.js",
+    "sanity",
+    "typescript",
+    "tailwindcss",
+    "monorepo",
+    "pnpm",
+    "headless-cms"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/word-alchemists-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/word-alchemists-platform/issues"
+  },
+  "homepage": "https://github.com/your-username/word-alchemists-platform#readme",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --fix",
+    "*.{js,jsx,ts,tsx,json,css,md}": "prettier --write"
   }
 }
