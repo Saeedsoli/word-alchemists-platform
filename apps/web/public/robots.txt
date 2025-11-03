@@ -1,0 +1,17 @@
+# Allow all search engines
+User-agent: *
+Allow: /
+Allow: /diagrams
+Allow: /diagrams/*
+Allow: /workshops
+Allow: /workshops/*
+
+# Disallow secret pages
+Disallow: /secret/
+Disallow: /api/
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://yoursite.com/sitemap.xml

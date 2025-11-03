@@ -1,0 +1,21 @@
+{
+  "name": "word-alchemists-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Word Alchemists - Digital Ecosystem",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "dev:studio": "pnpm --filter sanity-studio dev",
+    "build": "pnpm --filter web build",
+    "lint": "pnpm -r lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  }
+}
